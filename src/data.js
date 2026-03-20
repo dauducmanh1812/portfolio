@@ -10,8 +10,8 @@ export const personalInfo = {
   photo: "/profile.jpg",
   social: {
     github: "https://github.com/ducmanh",
-    linkedin: "https://linkedin.com/in/ducmanh",
-    facebook: "https://facebook.com/ducmanh",
+    linkedin: "https://www.linkedin.com/in/dauhnamcud1812/",
+    facebook: "https://www.facebook.com/dauhnamcud/",
   },
   objective:
     "Full-stack Software Engineer and Team Leader with 5+ years of hands-on experience in application development and system design, including 2 years in leadership roles. Experienced in leading development teams and delivering scalable application platforms. Strong in defining technical solutions, designing cloud-based architectures across multiple technology stacks, and collaborating with customers during development to meet business objectives.",
@@ -23,7 +23,7 @@ export const experience = [
     period: "2021 — Present",
     role: "Full-stack Developer → Team Leader",
     description:
-      "Building and leading development of enterprise-scale web applications for Japanese and Southeast Asian clients. Promoted to Team Leader in 2023, managing cross-functional teams up to 80 members.",
+      "Building and leading development of enterprise-scale web applications for Japan, Korea, and other global projects. Promoted to Team Leader in 2023, managing cross-functional teams up to 80 members.",
     highlights: [
       "Led 6+ projects across e-commerce, hospitality, travel, and construction domains",
       "Managed teams ranging from 10 to 80 members",

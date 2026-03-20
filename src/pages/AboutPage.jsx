@@ -55,7 +55,7 @@ export default function AboutPage() {
               <p className="text-xl md:text-2xl text-[#999] leading-relaxed font-light">
                 I began my career at GMO-Z.COM RUNSYSTEM right after graduating from Hanoi University.
                 Starting as a PHP developer, I quickly expanded across the full stack — Laravel, Vue.js, React,
-                Node.js — and grew into leading teams on enterprise-scale Japanese and Southeast Asian projects.
+                Node.js — and grew into leading teams on enterprise-scale Japan, Korea, and other global projects
               </p>
               <p className="text-base text-[#757575] leading-relaxed max-w-2xl">
                 Over 5+ years, I've contributed to platforms serving millions of users: from construction material

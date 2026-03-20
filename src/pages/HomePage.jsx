@@ -19,7 +19,7 @@ export default function HomePage() {
             <div className="inline-flex items-center gap-4 opacity-0 animate-fade-in" style={{ animationDelay: '0.1s', animationFillMode: 'forwards' }}>
               <span className="w-12 h-[1px] bg-neutral-700" />
               <span className="font-[Inter] text-[0.7rem] uppercase tracking-[0.4em] text-neutral-500">
-                Full-stack Engineer · Team Leader
+                Đỗ Đức Mạnh
               </span>
               <span className="w-12 h-[1px] bg-neutral-700" />
             </div>
