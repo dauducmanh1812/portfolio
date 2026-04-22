@@ -8,13 +8,13 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-white py-14 px-6 md:px-8 border-t border-amber-200/30">
+    <footer className="bg-surface-clo py-14 px-6 md:px-8 border-t border-[rgba(207,196,197,0.15)]">
       <div className="flex flex-col md:flex-row justify-between items-center gap-8 max-w-7xl mx-auto w-full">
-        <div className="flex flex-wrap justify-center gap-8 font-[Inter] text-[0.8rem] font-medium">
+        <div className="flex flex-wrap justify-center gap-8">
           {socialLinks.map((link) => (
             <a
               key={link.label}
-              className="text-amber-700 hover:text-amber-900 transition-colors duration-300"
+              className="text-xs font-display tracking-[0.06em] uppercase text-on-surface/50 hover:text-on-surface transition-colors duration-300"
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
@@ -23,7 +23,7 @@ export default function Footer() {
             </a>
           ))}
         </div>
-        <div className="text-amber-800/60 font-[Inter] text-[0.75rem] tracking-wide font-medium text-center">
+        <div className="text-xs font-display tracking-[0.06em] uppercase text-on-surface/30 text-center">
           © {new Date().getFullYear()} Đỗ Đức Mạnh
         </div>
       </div>

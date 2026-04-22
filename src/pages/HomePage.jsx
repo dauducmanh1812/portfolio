@@ -5,85 +5,73 @@ export default function HomePage() {
   const navigate = useNavigate()
 
   return (
-    <div className="bg-white">
+    <div className="bg-surface">
       {/* ── Hero ── */}
-      <main className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-gradient-to-br from-amber-50 via-white to-orange-50">
-        {/* Soft gradient accent */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute top-1/4 right-0 w-96 h-96 bg-gradient-to-l from-amber-200/20 to-transparent rounded-full blur-3xl" />
-          <div className="absolute bottom-1/4 left-0 w-80 h-80 bg-gradient-to-r from-orange-100/20 to-transparent rounded-full blur-3xl" />
-        </div>
-
-        <section className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-8 pt-32 pb-24">
-          <div className="flex flex-col items-center text-center space-y-10">
-            <div className="inline-flex items-center gap-4 opacity-0 animate-fade-in" style={{ animationDelay: '0.05s', animationFillMode: 'forwards' }}>
-              <span className="w-12 h-[1px] bg-amber-300" />
-              <span className="font-[Inter] text-[0.75rem] font-semibold tracking-wider text-amber-800">
-                Hi, I'm Mạnh
+      <main className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-20">
+        <section className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-8 py-26">
+          <div className="grid md:grid-cols-12 gap-8 items-center">
+            <div className="md:col-span-7 flex flex-col space-y-8">
+              <span className="text-[0.75rem] font-display tracking-[0.1em] uppercase text-on-surface/40">
+                Đỗ Đức Mạnh
               </span>
-              <span className="w-12 h-[1px] bg-amber-300" />
-            </div>
 
-            <h1 className="font-[Manrope] font-bold text-[11vw] md:text-[8vw] leading-tight tracking-tight text-amber-950 text-glow opacity-0 animate-fade-in-up" style={{ animationDelay: '0.1s', animationFillMode: 'forwards' }}>
-              Building digital<br />
-              <span className="italic text-amber-700">experiences</span><br />
-              that matter
-            </h1>
+              <h1 className="text-[clamp(2.5rem,5.5vw,3.5rem)] font-display font-bold tracking-[0.1em] uppercase leading-[0.95] text-on-surface">
+                Building digital<br />
+                products that<br />
+                create impact
+              </h1>
 
-            <div className="max-w-2xl space-y-10 flex flex-col items-center opacity-0 animate-fade-in-up" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
-              <p className="text-amber-900/70 text-lg md:text-xl leading-relaxed font-[Inter] font-normal max-w-xl">
+              <p className="text-base font-body font-light leading-[1.8] text-on-surface/70 max-w-xl">
                 {personalInfo.objective.split('.').slice(0, 2).join('.') + '.'}
               </p>
-              <div className="flex flex-col sm:flex-row gap-6 items-center">
+
+              <div className="flex flex-col sm:flex-row gap-6 pt-4">
                 <button
                   onClick={() => navigate('/about')}
-                  className="bg-amber-800 text-white px-10 py-4 rounded-xl font-[Manrope] font-semibold text-base shadow-lg hover:shadow-xl hover:bg-amber-900 active:scale-95 transition-all duration-300 relative overflow-hidden group"
+                  className="bg-cta-metallic text-on-primary font-display text-xs font-medium tracking-[0.06em] uppercase px-8 py-4 transition-opacity duration-[400ms] hover:opacity-90 active:opacity-95"
                 >
-                  <span className="relative z-10">Learn About Me</span>
+                  Explore My Work
                 </button>
-                <a
-                  href="mailto:ttducmanh.1812@gmail.com"
-                  className="flex items-center gap-2 font-[Manrope] font-semibold text-amber-800 hover:text-amber-950 transition-colors group"
+                <button
+                  onClick={() => window.location.href = 'mailto:ttducmanh.1812@gmail.com'}
+                  className="bg-transparent text-on-surface/50 font-display text-xs tracking-[0.06em] uppercase transition-colors duration-300 hover:text-on-surface flex items-center gap-2"
                 >
-                  Let's connect
-                  <span className="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">
-                    arrow_forward
-                  </span>
-                </a>
+                  Get in touch
+                  <svg className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="square" strokeLinejoin="square" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </button>
               </div>
+            </div>
+
+            <div className="md:col-span-5 hidden md:block">
+              {/* Placeholder for feature visual */}
+              <div className="aspect-square bg-surface-clo" />
             </div>
           </div>
         </section>
-
-        {/* Scroll indicator */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 opacity-40">
-          <span className="font-[Inter] text-xs font-semibold tracking-wide text-amber-700">
-            Scroll to explore
-          </span>
-          <div className="w-[1px] h-8 bg-gradient-to-b from-amber-400 to-transparent" />
-        </div>
       </main>
 
-      {/* ── CTA ── */}
-      <section className="mx-6 md:mx-8 mb-20 py-28 bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200/50 rounded-3xl overflow-hidden relative group max-w-7xl lg:mx-auto">
-        <div className="absolute inset-0 bg-gradient-to-t from-amber-100/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-        <div className="relative z-10 text-center space-y-10 px-8">
-          <h2 className="text-4xl md:text-6xl font-[Manrope] font-bold tracking-tight text-amber-950">
-            Let's create something<br />
-            <span className="italic text-amber-700">meaningful</span> together
-          </h2>
-          <div className="pt-6">
-            <a
-              href="mailto:ttducmanh.1812@gmail.com"
-              className="inline-flex items-center gap-3 text-amber-900 font-[Manrope] font-semibold text-base group/btn"
-            >
-              <span className="border-b-2 border-amber-800 pb-1 group-hover/btn:border-amber-950 transition-colors">
-                Get in touch
-              </span>
-              <span className="material-symbols-outlined text-lg text-amber-800 group-hover/btn:translate-x-1 transition-transform">
-                arrow_forward
-              </span>
-            </a>
+      {/* ── CTA Section ── */}
+      <section className="bg-surface-clo py-26 px-6 md:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-12 gap-8 items-center">
+            <div className="md:col-span-5">
+              <h2 className="text-[clamp(1.75rem,3vw,2.5rem)] font-display font-semibold tracking-[-0.025em] leading-[1.1] text-on-surface">
+                Let's work <span className="text-on-surface/40">together</span>
+              </h2>
+              <p className="text-base font-body font-light leading-[1.8] text-on-surface/70 mt-6">
+                Interested in collaborating on something meaningful? I'd love to hear from you.
+              </p>
+            </div>
+            <div className="md:col-span-6 md:col-start-7">
+              <a
+                href="mailto:ttducmanh.1812@gmail.com"
+                className="inline-flex bg-cta-metallic text-on-primary font-display text-xs font-medium tracking-[0.06em] uppercase px-8 py-4 transition-opacity duration-[400ms] hover:opacity-90 active:opacity-95"
+              >
+                Start a Conversation
+              </a>
+            </div>
           </div>
         </div>
       </section>
