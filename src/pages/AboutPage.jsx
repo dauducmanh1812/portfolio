@@ -170,42 +170,62 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* ── Education, Certs, Awards ── */}
+        {/* ── Timeline ── */}
         <section className="mb-40">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Education */}
-            <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-8 border border-amber-200/50 shadow-sm">
-              <span className="material-symbols-outlined text-3xl text-amber-700 mb-4 block">school</span>
-              <h3 className="font-[Manrope] font-bold text-amber-950 text-lg mb-2">
-                {education.school}
-              </h3>
-              <p className="text-amber-900/70 text-sm">{education.degree}</p>
-              <p className="text-amber-900/60 text-xs mt-2 tracking-wide">{education.period}</p>
-            </div>
+          <div className="relative">
+            {/* Timeline line */}
+            <div className="absolute left-5 md:left-1/2 top-0 bottom-0 w-[1px] bg-gradient-to-b from-amber-300/50 via-amber-300/30 to-transparent" />
 
-            {/* Certifications */}
-            <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-8 border border-amber-200/50 shadow-sm">
-              <span className="material-symbols-outlined text-3xl text-amber-700 mb-4 block">verified</span>
+            <div className="space-y-12">
+              {/* Education */}
+              <div className="grid md:grid-cols-2 gap-6 md:gap-0">
+                <div className="md:text-right md:pr-8">
+                  <span className="text-xs font-semibold text-amber-700 tracking-wider">
+                    {education.period}
+                  </span>
+                  <h3 className="text-lg font-semibold text-amber-950 mt-1">{education.school}</h3>
+                  <p className="text-sm text-amber-900/60 mt-1">{education.degree}</p>
+                </div>
+                <div className="md:pl-8">
+                  <div className="absolute left-0 md:left-1/2 w-10 h-10 -translate-x-1/2 flex items-center justify-center">
+                    <div className="w-5 h-5 rounded-full bg-white border-2 border-amber-400" />
+                  </div>
+                </div>
+              </div>
+
+              {/* Certifications */}
               {certifications.map((cert) => (
-                <div key={cert.name}>
-                  <h3 className="font-[Manrope] font-bold text-amber-950 text-lg mb-2">
-                    {cert.name} — {cert.score}
-                  </h3>
-                  <p className="text-amber-900/60 text-xs tracking-wide">{cert.year}</p>
+                <div key={cert.name} className="grid md:grid-cols-2 gap-6 md:gap-0">
+                  <div className="md:text-right md:pr-8">
+                    <span className="text-xs font-semibold text-amber-700 tracking-wider">
+                      {cert.year}
+                    </span>
+                    <h3 className="text-lg font-semibold text-amber-950 mt-1">{cert.name}</h3>
+                    <p className="text-sm text-amber-900/60 mt-1">{cert.score}</p>
+                  </div>
+                  <div className="md:pl-8">
+                    <div className="absolute left-0 md:left-1/2 w-10 h-10 -translate-x-1/2 flex items-center justify-center">
+                      <div className="w-5 h-5 rounded-full bg-white border-2 border-amber-400" />
+                    </div>
+                  </div>
                 </div>
               ))}
-            </div>
 
-            {/* Awards */}
-            <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-8 border border-amber-200/50 shadow-sm">
-              <span className="material-symbols-outlined text-3xl text-amber-700 mb-4 block">emoji_events</span>
+              {/* Awards */}
               {awards.map((award) => (
-                <div key={award.name}>
-                  <h3 className="font-[Manrope] font-bold text-amber-950 text-lg mb-2">
-                    {award.name}
-                  </h3>
-                  <p className="text-amber-900/70 text-sm">{award.org}</p>
-                  <p className="text-amber-900/60 text-xs mt-2 tracking-wide">{award.year}</p>
+                <div key={award.name} className="grid md:grid-cols-2 gap-6 md:gap-0">
+                  <div className="md:text-right md:pr-8">
+                    <span className="text-xs font-semibold text-amber-700 tracking-wider">
+                      {award.year}
+                    </span>
+                    <h3 className="text-lg font-semibold text-amber-950 mt-1">{award.name}</h3>
+                    <p className="text-sm text-amber-900/60 mt-1">{award.org}</p>
+                  </div>
+                  <div className="md:pl-8">
+                    <div className="absolute left-0 md:left-1/2 w-10 h-10 -translate-x-1/2 flex items-center justify-center">
+                      <div className="w-5 h-5 rounded-full bg-white border-2 border-amber-400" />
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>
