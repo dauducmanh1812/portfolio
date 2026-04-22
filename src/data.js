@@ -124,7 +124,7 @@ export const education = {
 };
 
 export const certifications = [
-  { name: "TOEIC", score: "935", year: "2025" },
+  { name: "GMO-Z.COM Runsystem", score: "Full-stack Developer → Team Leader", year: "2021 — Present" },
 ];
 
 export const awards = [

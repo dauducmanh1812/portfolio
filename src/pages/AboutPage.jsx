@@ -161,57 +161,37 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="relative">
-            {/* Timeline line */}
-            <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-[1px] bg-on-surface/10" />
-
-            <div className="space-y-20 md:space-y-24">
-              {/* Education */}
-              <div className="grid md:grid-cols-2 gap-8 md:gap-16 relative">
-                <div className="md:text-right">
-                  <span className="text-[0.75rem] font-display tracking-[0.1em] uppercase text-on-surface/40">
-                    {education.period}
-                  </span>
-                  <h3 className="text-lg font-display font-semibold tracking-[-0.015em] leading-tight text-on-surface mt-2">{education.school}</h3>
-                  <p className="text-sm font-body font-light text-on-surface/60 mt-2">{education.degree}</p>
-                </div>
-                <div className="md:col-start-2">
-                  <div className="absolute left-0 md:left-1/2 w-4 h-4 -translate-x-1.5 md:-translate-x-2 top-1 bg-surface-cl border border-on-surface/20" />
-                </div>
-              </div>
-
-              {/* Certifications */}
-              {certifications.map((cert) => (
-                <div key={cert.name} className="grid md:grid-cols-2 gap-8 md:gap-16 relative">
-                  <div className="md:text-right">
-                    <span className="text-[0.75rem] font-display tracking-[0.1em] uppercase text-on-surface/40">
-                      {cert.year}
-                    </span>
-                    <h3 className="text-lg font-display font-semibold tracking-[-0.015em] leading-tight text-on-surface mt-2">{cert.name}</h3>
-                    <p className="text-sm font-body font-light text-on-surface/60 mt-2">{cert.score}</p>
-                  </div>
-                  <div className="md:col-start-2">
-                    <div className="absolute left-0 md:left-1/2 w-4 h-4 -translate-x-1.5 md:-translate-x-2 top-1 bg-surface-cl border border-on-surface/20" />
-                  </div>
-                </div>
-              ))}
-
-              {/* Awards */}
-              {awards.map((award) => (
-                <div key={award.name} className="grid md:grid-cols-2 gap-8 md:gap-16 relative">
-                  <div className="md:text-right">
-                    <span className="text-[0.75rem] font-display tracking-[0.1em] uppercase text-on-surface/40">
-                      {award.year}
-                    </span>
-                    <h3 className="text-lg font-display font-semibold tracking-[-0.015em] leading-tight text-on-surface mt-2">{award.name}</h3>
-                    <p className="text-sm font-body font-light text-on-surface/60 mt-2">{award.org}</p>
-                  </div>
-                  <div className="md:col-start-2">
-                    <div className="absolute left-0 md:left-1/2 w-4 h-4 -translate-x-1.5 md:-translate-x-2 top-1 bg-surface-cl border border-on-surface/20" />
-                  </div>
-                </div>
-              ))}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
+            {/* Education */}
+            <div className="pb-12 border-b md:border-b-0 md:border-r border-[rgba(207,196,197,0.15)]">
+              <span className="text-[0.75rem] font-display tracking-[0.1em] uppercase text-on-surface/40">
+                {education.period}
+              </span>
+              <h3 className="text-lg font-display font-semibold tracking-[-0.015em] leading-tight text-on-surface mt-4">{education.school}</h3>
+              <p className="text-sm font-body font-light text-on-surface/60 mt-2">{education.degree}</p>
             </div>
+
+            {/* Certifications */}
+            {certifications.map((cert) => (
+              <div key={cert.name} className="pb-12 border-b md:border-b-0 md:border-r border-[rgba(207,196,197,0.15)] last:border-0">
+                <span className="text-[0.75rem] font-display tracking-[0.1em] uppercase text-on-surface/40">
+                  {cert.year}
+                </span>
+                <h3 className="text-lg font-display font-semibold tracking-[-0.015em] leading-tight text-on-surface mt-4">{cert.name}</h3>
+                <p className="text-sm font-body font-light text-on-surface/60 mt-2">{cert.score}</p>
+              </div>
+            ))}
+
+            {/* Awards */}
+            {awards.map((award) => (
+              <div key={award.name} className="pb-12 border-b md:border-b-0 md:border-r border-[rgba(207,196,197,0.15)] last:border-0">
+                <span className="text-[0.75rem] font-display tracking-[0.1em] uppercase text-on-surface/40">
+                  {award.year}
+                </span>
+                <h3 className="text-lg font-display font-semibold tracking-[-0.015em] leading-tight text-on-surface mt-4">{award.name}</h3>
+                <p className="text-sm font-body font-light text-on-surface/60 mt-2">{award.org}</p>
+              </div>
+            ))}
           </div>
         </section>
 
