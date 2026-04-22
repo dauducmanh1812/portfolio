@@ -7,18 +7,18 @@ export default function AboutPage() {
   }, [])
 
   return (
-    <div className="bg-[#0e0e0e]">
+    <div className="bg-white">
       <main className="pt-40 pb-24 px-6 md:px-8 max-w-5xl mx-auto min-h-screen">
         {/* ── Hero Section ── */}
         <section className="mb-40">
           <div className="flex flex-col items-center md:items-start md:flex-row gap-14 md:gap-20">
             {/* Photo */}
             <div className="relative group shrink-0">
-              <div className="absolute -inset-1 bg-gradient-to-tr from-[#0052FF] to-[#3766ff] rounded-lg blur opacity-10 group-hover:opacity-25 transition duration-1000" />
-              <div className="relative w-52 h-68 md:w-72 md:h-96 rounded-lg overflow-hidden bg-[#1a1a1a] border border-white/5">
+              <div className="absolute -inset-2 bg-gradient-to-br from-amber-200 to-orange-100 rounded-2xl blur-xl opacity-0 group-hover:opacity-30 transition duration-700" />
+              <div className="relative w-52 h-68 md:w-72 md:h-96 rounded-2xl overflow-hidden bg-amber-100 border border-amber-200/50 shadow-lg">
                 <img
                   alt="Đỗ Đức Mạnh"
-                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-110 group-hover:scale-100"
+                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100"
                   src={personalInfo.photo}
                 />
               </div>
@@ -26,17 +26,17 @@ export default function AboutPage() {
 
             {/* Info */}
             <div className="flex-1 space-y-8">
-              <span className="font-[Inter] uppercase tracking-[0.4em] text-[#0052FF]/80 font-bold text-xs">
-                {personalInfo.title} · {personalInfo.subtitle}
+              <span className="font-[Inter] tracking-wider font-semibold text-amber-700 text-xs">
+                {personalInfo.title} • {personalInfo.subtitle}
               </span>
-              <h1 className="text-5xl md:text-8xl font-[Manrope] font-[800] tracking-[-0.06em] text-white leading-[0.9] mt-4">
-                I am{' '}
-                <span className="text-[#0052FF]">Mạnh</span>.
+              <h1 className="text-5xl md:text-7xl font-[Manrope] font-bold tracking-tight text-amber-950 leading-tight mt-4">
+                I'm{' '}
+                <span className="text-amber-700">Mạnh</span>, a developer <br /> & team leader
               </h1>
-              <p className="text-xl md:text-2xl text-[#999] font-light leading-snug max-w-xl">
-                Building scalable applications and leading teams to deliver impactful digital products across Asia.
+              <p className="text-lg md:text-xl text-amber-900/70 font-normal leading-relaxed max-w-xl">
+                I build scalable applications and lead teams to deliver meaningful digital products that create real impact across Asia.
               </p>
-              <div className="flex flex-wrap gap-4 pt-2">
+              <div className="flex flex-wrap gap-3 pt-4">
                 <InfoPill icon="mail" text={personalInfo.email} />
                 <InfoPill icon="call" text={personalInfo.phone} />
                 <InfoPill icon="location_on" text={personalInfo.location} />
@@ -52,16 +52,16 @@ export default function AboutPage() {
               <SectionLabel>My Journey</SectionLabel>
             </div>
             <div className="md:col-span-8 space-y-10">
-              <p className="text-xl md:text-2xl text-[#999] leading-relaxed font-light">
-                I began my career at GMO-Z.COM RUNSYSTEM right after graduating from Hanoi University.
-                Starting as a PHP developer, I quickly expanded across the full stack — Laravel, Vue.js, React,
-                Node.js — and grew into leading teams on enterprise-scale Japan, Korea, and other global projects
+              <p className="text-lg md:text-xl text-amber-900/80 leading-relaxed font-normal">
+                I started my career at GMO-Z.COM RUNSYSTEM right after graduating from Hanoi University.
+                Beginning as a PHP developer, I quickly grew across the full stack — Laravel, Vue.js, React,
+                and Node.js — eventually leading teams on enterprise-scale projects across Japan, Korea, and beyond.
               </p>
-              <p className="text-base text-[#757575] leading-relaxed max-w-2xl">
+              <p className="text-base text-amber-900/70 leading-relaxed max-w-2xl">
                 Over 5+ years, I've contributed to platforms serving millions of users: from construction material
-                ordering systems with 80-person teams, to travel platforms, e-commerce solutions, and hotel
-                management tools. My philosophy is simple:{' '}
-                <strong className="text-white font-bold">
+                ordering systems managing 80-person teams, to travel platforms, e-commerce solutions, and hotel
+                management tools. My core philosophy is straightforward:{' '}
+                <strong className="text-amber-950 font-semibold">
                   engineer for scale, lead with clarity
                 </strong>.
               </p>
@@ -69,18 +69,18 @@ export default function AboutPage() {
           </div>
 
           {/* Quote */}
-          <div className="grid md:grid-cols-12 gap-10 pt-14 border-t border-white/5">
+          <div className="grid md:grid-cols-12 gap-10 pt-14 border-t border-amber-200/50">
             <div className="md:col-span-4">
               <SectionLabel>Philosophy</SectionLabel>
             </div>
             <div className="md:col-span-8">
               <blockquote className="relative">
-                <span className="absolute -left-10 top-0 text-6xl font-[Manrope] text-[#0052FF]/20 leading-none">
+                <span className="absolute -left-10 top-0 text-6xl font-[Manrope] text-amber-300/30 leading-none">
                   "
                 </span>
-                <p className="text-3xl md:text-5xl font-[Manrope] italic font-light text-white leading-tight tracking-tight">
+                <p className="text-3xl md:text-4xl font-[Manrope] italic font-normal text-amber-950 leading-snug tracking-tight">
                   Good code is invisible — it simply works. Great leadership makes{' '}
-                  <span className="text-[#0052FF] not-italic font-bold">everyone</span> around you ship better.
+                  <span className="text-amber-700 not-italic font-semibold">everyone</span> around you ship better.
                 </p>
               </blockquote>
             </div>
@@ -90,10 +90,10 @@ export default function AboutPage() {
         {/* ── Experience ── */}
         <section className="mb-40">
           <div className="flex items-baseline justify-between mb-20">
-            <h2 className="text-4xl md:text-6xl font-[Manrope] font-[800] tracking-[-0.05em] text-white">
+            <h2 className="text-4xl md:text-6xl font-[Manrope] font-bold tracking-tight text-amber-950">
               Experience
             </h2>
-            <span className="text-[#757575] font-[Manrope] text-sm uppercase tracking-widest hidden md:block">
+            <span className="text-amber-700 font-[Manrope] text-sm font-semibold tracking-wider hidden md:block">
               Career
             </span>
           </div>
@@ -101,28 +101,28 @@ export default function AboutPage() {
           {experience.map((exp) => (
             <div
               key={exp.company}
-              className="border-b border-white/5 pb-12 mb-12"
+              className="border-b border-amber-200/50 pb-12 mb-12"
             >
               <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6">
                 <div>
-                  <h3 className="text-2xl md:text-3xl font-[Manrope] font-bold text-white">
+                  <h3 className="text-2xl md:text-3xl font-[Manrope] font-bold text-amber-950">
                     {exp.company}
                   </h3>
-                  <p className="text-[#0052FF] font-[Manrope] font-bold text-sm uppercase tracking-wider mt-1">
+                  <p className="text-amber-700 font-[Manrope] font-semibold text-sm tracking-wide mt-1">
                     {exp.role}
                   </p>
                 </div>
-                <span className="text-[#757575] font-[Inter] text-sm tracking-wider shrink-0">
+                <span className="text-amber-900/60 font-[Inter] text-sm tracking-wide shrink-0">
                   {exp.period}
                 </span>
               </div>
-              <p className="text-[#999] text-base leading-relaxed mb-6 max-w-3xl">
+              <p className="text-amber-900/70 text-base leading-relaxed mb-6 max-w-3xl">
                 {exp.description}
               </p>
               <ul className="space-y-2">
                 {exp.highlights.map((h, i) => (
-                  <li key={i} className="flex items-start gap-3 text-[#999] text-sm">
-                    <span className="text-[#0052FF] mt-0.5 shrink-0">▸</span>
+                  <li key={i} className="flex items-start gap-3 text-amber-900/70 text-sm">
+                    <span className="text-amber-700 mt-0.5 shrink-0">▸</span>
                     {h}
                   </li>
                 ))}
@@ -134,10 +134,10 @@ export default function AboutPage() {
         {/* ── Expertise Grid ── */}
         <section className="mb-40">
           <div className="flex items-baseline justify-between mb-20">
-            <h2 className="text-4xl md:text-6xl font-[Manrope] font-[800] tracking-[-0.05em] text-white">
+            <h2 className="text-4xl md:text-6xl font-[Manrope] font-bold tracking-tight text-amber-950">
               Expertise
             </h2>
-            <span className="text-[#757575] font-[Manrope] text-sm uppercase tracking-widest hidden md:block">
+            <span className="text-amber-700 font-[Manrope] text-sm font-semibold tracking-wider hidden md:block">
               Capabilities
             </span>
           </div>
@@ -174,38 +174,38 @@ export default function AboutPage() {
         <section className="mb-40">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Education */}
-            <div className="bg-[#111] rounded-2xl p-8 border border-white/5">
-              <span className="material-symbols-outlined text-3xl text-[#0052FF] mb-4 block">school</span>
-              <h3 className="font-[Manrope] font-bold text-white text-lg mb-2">
+            <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-8 border border-amber-200/50 shadow-sm">
+              <span className="material-symbols-outlined text-3xl text-amber-700 mb-4 block">school</span>
+              <h3 className="font-[Manrope] font-bold text-amber-950 text-lg mb-2">
                 {education.school}
               </h3>
-              <p className="text-[#999] text-sm">{education.degree}</p>
-              <p className="text-[#757575] text-xs mt-2 uppercase tracking-wider">{education.period}</p>
+              <p className="text-amber-900/70 text-sm">{education.degree}</p>
+              <p className="text-amber-900/60 text-xs mt-2 tracking-wide">{education.period}</p>
             </div>
 
             {/* Certifications */}
-            <div className="bg-[#111] rounded-2xl p-8 border border-white/5">
-              <span className="material-symbols-outlined text-3xl text-[#0052FF] mb-4 block">verified</span>
+            <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-8 border border-amber-200/50 shadow-sm">
+              <span className="material-symbols-outlined text-3xl text-amber-700 mb-4 block">verified</span>
               {certifications.map((cert) => (
                 <div key={cert.name}>
-                  <h3 className="font-[Manrope] font-bold text-white text-lg mb-2">
+                  <h3 className="font-[Manrope] font-bold text-amber-950 text-lg mb-2">
                     {cert.name} — {cert.score}
                   </h3>
-                  <p className="text-[#757575] text-xs uppercase tracking-wider">{cert.year}</p>
+                  <p className="text-amber-900/60 text-xs tracking-wide">{cert.year}</p>
                 </div>
               ))}
             </div>
 
             {/* Awards */}
-            <div className="bg-[#111] rounded-2xl p-8 border border-white/5">
-              <span className="material-symbols-outlined text-3xl text-[#0052FF] mb-4 block">emoji_events</span>
+            <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-8 border border-amber-200/50 shadow-sm">
+              <span className="material-symbols-outlined text-3xl text-amber-700 mb-4 block">emoji_events</span>
               {awards.map((award) => (
                 <div key={award.name}>
-                  <h3 className="font-[Manrope] font-bold text-white text-lg mb-2">
+                  <h3 className="font-[Manrope] font-bold text-amber-950 text-lg mb-2">
                     {award.name}
                   </h3>
-                  <p className="text-[#999] text-sm">{award.org}</p>
-                  <p className="text-[#757575] text-xs mt-2 uppercase tracking-wider">{award.year}</p>
+                  <p className="text-amber-900/70 text-sm">{award.org}</p>
+                  <p className="text-amber-900/60 text-xs mt-2 tracking-wide">{award.year}</p>
                 </div>
               ))}
             </div>
@@ -213,22 +213,22 @@ export default function AboutPage() {
         </section>
 
         {/* ── CTA ── */}
-        <section className="py-28 bg-black border border-white/5 rounded-2xl overflow-hidden relative group">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(0,82,255,0.06)_0%,_transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
+        <section className="py-28 bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200/50 rounded-3xl overflow-hidden relative group shadow-lg">
+          <div className="absolute inset-0 bg-gradient-to-t from-amber-100/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
           <div className="relative z-10 text-center space-y-10 px-8">
-            <h2 className="text-4xl md:text-7xl font-[Manrope] font-[800] tracking-[-0.06em] text-white">
-              Let's build <br /> something{' '}
-              <span className="text-[#0052FF] italic">great</span>.
+            <h2 className="text-4xl md:text-6xl font-[Manrope] font-bold tracking-tight text-amber-950">
+              Ready to collaborate?<br />
+              <span className="italic text-amber-700">Let's connect</span>
             </h2>
             <div className="pt-6">
               <a
                 href="mailto:ttducmanh.1812@gmail.com"
-                className="inline-flex items-center gap-4 text-white font-[Manrope] font-bold uppercase tracking-[0.2em] text-sm group/btn"
+                className="inline-flex items-center gap-3 text-amber-900 font-[Manrope] font-semibold text-base group/btn"
               >
-                <span className="border-b-2 border-[#0052FF] pb-1 group-hover/btn:px-4 transition-all duration-300">
+                <span className="border-b-2 border-amber-800 pb-1 group-hover/btn:border-amber-950 transition-colors">
                   Get in touch
                 </span>
-                <span className="material-symbols-outlined text-[#0052FF] group-hover/btn:translate-x-4 transition-transform duration-300">
+                <span className="material-symbols-outlined text-lg text-amber-800 group-hover/btn:translate-x-1 transition-transform">
                   arrow_forward
                 </span>
               </a>
@@ -244,7 +244,7 @@ export default function AboutPage() {
 
 function SectionLabel({ children }) {
   return (
-    <h2 className="font-[Manrope] text-[0.7rem] uppercase tracking-[0.4em] text-[#757575] font-[800]">
+    <h2 className="font-[Manrope] text-[0.75rem] font-semibold tracking-wider text-amber-700">
       {children}
     </h2>
   )
@@ -252,8 +252,8 @@ function SectionLabel({ children }) {
 
 function InfoPill({ icon, text }) {
   return (
-    <span className="inline-flex items-center gap-2 text-[#999] text-xs font-[Inter] bg-white/5 px-3 py-1.5 rounded-full border border-white/5">
-      <span className="material-symbols-outlined text-[0.9rem] text-[#0052FF]">{icon}</span>
+    <span className="inline-flex items-center gap-2 text-amber-900/70 text-xs font-[Inter] bg-amber-100/50 px-3 py-1.5 rounded-full border border-amber-200/70">
+      <span className="material-symbols-outlined text-[0.9rem] text-amber-700">{icon}</span>
       {text}
     </span>
   )
@@ -261,19 +261,19 @@ function InfoPill({ icon, text }) {
 
 function ExpertiseCard({ num, icon, title, desc }) {
   return (
-    <div className="group border-b border-white/5 pb-10 hover:border-[#0052FF]/40 transition-colors duration-500">
+    <div className="group border-b border-amber-200/50 pb-10 hover:border-amber-400/60 transition-colors duration-300">
       <div className="flex justify-between items-start mb-5">
-        <span className="text-[#0052FF] font-[Manrope] text-xs font-[800] tracking-widest uppercase">
+        <span className="text-amber-700 font-[Manrope] text-xs font-semibold tracking-wider">
           {num}
         </span>
-        <span className="material-symbols-outlined text-[#757575] group-hover:text-[#0052FF] transition-colors">
+        <span className="material-symbols-outlined text-amber-700/60 group-hover:text-amber-700 transition-colors">
           {icon}
         </span>
       </div>
-      <h3 className="text-2xl md:text-3xl font-[Manrope] font-bold text-white mb-3">
+      <h3 className="text-2xl md:text-3xl font-[Manrope] font-bold text-amber-950 mb-3">
         {title}
       </h3>
-      <p className="text-[#999] text-base leading-relaxed font-light">{desc}</p>
+      <p className="text-amber-900/70 text-base leading-relaxed font-normal">{desc}</p>
     </div>
   )
 }

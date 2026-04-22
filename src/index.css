@@ -8,19 +8,23 @@
 }
 
 @theme {
-  --color-primary: #0052FF;
-  --color-primary-dim: #3766ff;
-  --color-background: #0a0a0a;
-  --color-surface: #0a0a0a;
-  --color-surface-container: #141414;
-  --color-surface-container-low: #0f0f0f;
-  --color-surface-container-high: #1a1a1a;
-  --color-surface-container-highest: #242424;
-  --color-surface-bright: #2c2c2c;
-  --color-on-surface: #ffffff;
-  --color-on-surface-variant: #999999;
-  --color-outline: #757575;
-  --color-outline-variant: #333333;
+  --color-primary: #8B7355;
+  --color-primary-dim: #A89070;
+  --color-background: #FAF8F6;
+  --color-surface: #FAF8F6;
+  --color-surface-container: #F0EEEB;
+  --color-surface-container-low: #F5F3F0;
+  --color-surface-container-high: #EAE7E3;
+  --color-surface-container-highest: #E0DDD8;
+  --color-surface-bright: #FFFFFF;
+  --color-on-surface: #2B2925;
+  --color-on-surface-variant: #7B6F67;
+  --color-outline: #9A8F85;
+  --color-outline-variant: #D4CFCA;
+
+  --color-accent-warm: #D4A574;
+  --color-accent-soft: #B8956A;
+  --color-accent-sage: #7D9B84;
 
   --font-headline: 'Manrope', sans-serif;
   --font-body: 'Inter', system-ui, sans-serif;
@@ -34,37 +38,37 @@
   body {
     margin: 0;
     overflow-x: hidden;
-    background-color: #0a0a0a;
-    color: #ffffff;
+    background-color: #FAF8F6;
+    color: #2B2925;
     font-family: 'Inter', system-ui, sans-serif;
   }
   ::selection {
-    background-color: white;
-    color: black;
+    background-color: #D4A574;
+    color: #FAF8F6;
   }
   ::-webkit-scrollbar {
     width: 8px;
   }
   ::-webkit-scrollbar-track {
-    background: #0a0a0a;
+    background: #FAF8F6;
   }
   ::-webkit-scrollbar-thumb {
-    background: #333;
+    background: #D4CFCA;
     border-radius: 4px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #444;
+    background: #C0B5AA;
   }
 }
 
 .text-glow {
-  text-shadow: 0 0 40px rgba(255, 255, 255, 0.1);
+  text-shadow: none;
 }
 
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -78,15 +82,15 @@
 }
 
 .animate-fade-in-up {
-  animation: fadeInUp 0.8s ease-out forwards;
+  animation: fadeInUp 0.6s ease-in-out forwards;
 }
 
 .animate-fade-in {
-  animation: fadeIn 1s ease-out forwards;
+  animation: fadeIn 0.7s ease-in-out forwards;
 }
 
-.delay-100 { animation-delay: 0.1s; }
-.delay-200 { animation-delay: 0.2s; }
-.delay-300 { animation-delay: 0.3s; }
-.delay-400 { animation-delay: 0.4s; }
-.delay-500 { animation-delay: 0.5s; }
+.delay-100 { animation-delay: 0.05s; }
+.delay-200 { animation-delay: 0.1s; }
+.delay-300 { animation-delay: 0.15s; }
+.delay-400 { animation-delay: 0.2s; }
+.delay-500 { animation-delay: 0.25s; }
