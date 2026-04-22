@@ -21,12 +21,12 @@ export default function AboutPage() {
                 {personalInfo.title} · {personalInfo.subtitle}
               </span>
               <h1 className="text-[clamp(2.5rem,5.5vw,3.5rem)] font-display font-bold tracking-[0.1em] uppercase leading-[0.95] text-on-surface mb-8">
-                I build<br />
-                products that<br />
-                <span className="text-on-surface/40">matter</span>
+                Full-stack engineer<br />
+                &amp; team<br />
+                <span className="text-on-surface/40">leader</span>
               </h1>
               <p className="text-base font-body font-light leading-[1.8] text-on-surface/70 max-w-xl mb-10">
-                I build scalable applications and lead teams to deliver meaningful digital products that create real impact across Asia.
+                5+ years building scalable digital products and leading cross-functional teams. Specialized in full-stack development, cloud architecture, and delivering enterprise-scale solutions across Asia.
               </p>
               <div className="flex flex-wrap gap-6">
                 <InfoPill icon="mail" text={personalInfo.email} />
@@ -45,14 +45,10 @@ export default function AboutPage() {
             </div>
             <div className="md:col-span-9 space-y-8">
               <p className="text-base font-body font-light leading-[1.8] text-on-surface/70">
-                I started my career at GMO-Z.COM RUNSYSTEM right after graduating from Hanoi University.
-                Beginning as a PHP developer, I quickly grew across the full stack — Laravel, Vue.js, React,
-                and Node.js — eventually leading teams on enterprise-scale projects across Japan, Korea, and beyond.
+                After graduating from Hanoi University in 2021, I joined GMO-Z.COM RUNSYSTEM as a PHP developer. Over the next years, I rapidly expanded my expertise across the entire stack—from backend frameworks like Laravel and Node.js to frontend technologies like Vue.js and React. This full-stack foundation enabled me to contribute meaningfully across all layers of enterprise applications.
               </p>
               <p className="text-base font-body font-light leading-[1.8] text-on-surface/70">
-                Over 5+ years, I've contributed to platforms serving millions of users: from construction material
-                ordering systems managing 80-person teams, to travel platforms, e-commerce solutions, and hotel
-                management tools. My core philosophy is straightforward:{' '}
+                By 2023, I was promoted to Team Leader, managing teams of 10-80 engineers on high-impact projects. I've since led 6+ products serving millions of users—from a construction materials marketplace to travel platforms and e-commerce solutions across Japan, Korea, and Southeast Asia. My approach combines technical excellence with clear communication:{' '}
                 <strong className="text-on-surface font-medium">
                   engineer for scale, lead with clarity
                 </strong>.
@@ -67,9 +63,8 @@ export default function AboutPage() {
             </div>
             <div className="md:col-span-9">
               <blockquote>
-                <p className="text-xl font-body font-light leading-[1.8] text-on-surface italic">
-                  "Good code is invisible — it simply works. Great leadership makes{' '}
-                  <span className="text-on-surface/40 not-italic">everyone</span> around you ship better."
+                <p className="text-lg font-body font-light leading-[1.8] text-on-surface italic">
+                  "The best code is invisible—it simply solves the problem. The best leaders amplify the abilities of everyone around them, enabling better shipping and greater impact."
                 </p>
               </blockquote>
             </div>
@@ -133,10 +128,28 @@ export default function AboutPage() {
               desc="Designing robust server-side systems with Laravel, NestJS, Django — building RESTful APIs and microservices that serve millions of requests."
             />
             <ExpertiseCard
+              num="01"
+              icon="code"
+              title="Full-Stack Development"
+              desc="PHP, JavaScript, TypeScript. Building scalable REST APIs, microservices, and real-time applications from concept to production."
+            />
+            <ExpertiseCard
               num="02"
               icon="web"
               title="Frontend Engineering"
-              desc="Crafting responsive, performant interfaces with Vue.js, React, and NuxtJS — from SPAs to server-rendered applications."
+              desc="Vue.js, React, NuxtJS. Responsive, accessible interfaces optimized for performance across web, tablet, and mobile platforms."
+            />
+            <ExpertiseCard
+              num="03"
+              icon="groups"
+              title="Team Leadership"
+              desc="Managed 10–80 engineers across 6 products. Technical vision, mentoring, process definition, and delivery of high-impact projects."
+            />
+            <ExpertiseCard
+              num="04"
+              icon="cloud"
+              title="Cloud & DevOps"
+              desc="AWS architecture, Docker containerization, GitHub Actions CI/CD. Designed systems handling 100K+ daily transactions reliably."
             />
             <ExpertiseCard
               num="03"
@@ -196,22 +209,30 @@ export default function AboutPage() {
         </section>
 
         {/* ── CTA ── */}
-        <section className="py-26 bg-surface-clo">
+        <section className="py-26 bg-surface-clo border-t border-[rgba(207,196,197,0.15)]">
           <div className="grid md:grid-cols-12 gap-16 items-center">
             <div className="md:col-span-6">
               <h2 className="text-[clamp(1.75rem,3vw,2.5rem)] font-display font-semibold tracking-[-0.025em] leading-[1.1] text-on-surface">
-                Ready to start <span className="text-on-surface/40">something great?</span>
+                Let's build <span className="text-on-surface/40">something great</span>
               </h2>
               <p className="text-base font-body font-light leading-[1.8] text-on-surface/70 mt-6">
-                I'm always interested in hearing about new opportunities and collaborations.
+                Whether you're looking for a full-stack engineer, team lead, technical consultant, or simply want to discuss ideas, I'm here to help. Reach out anytime.
               </p>
             </div>
-            <div className="md:col-span-6 md:text-right">
+            <div className="md:col-span-6 md:text-right flex flex-col sm:flex-row gap-4 md:gap-0 md:justify-end md:items-start">
               <a
                 href="mailto:ttducmanh.1812@gmail.com"
                 className="inline-flex bg-cta-metallic text-on-primary font-display text-xs font-medium tracking-[0.06em] uppercase px-8 py-4 transition-opacity duration-[400ms] hover:opacity-90 active:opacity-95"
               >
                 Get in touch
+              </a>
+              <a
+                href="https://www.linkedin.com/in/dauhnamcud1812/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex text-xs font-display tracking-[0.06em] uppercase text-on-surface/50 hover:text-on-surface transition-colors duration-300 md:ml-6"
+              >
+                LinkedIn
               </a>
             </div>
           </div>

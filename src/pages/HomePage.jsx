@@ -16,13 +16,13 @@ export default function HomePage() {
               </span>
 
               <h1 className="text-[clamp(2.5rem,5.5vw,3.5rem)] font-display font-bold tracking-[0.1em] uppercase leading-[0.95] text-on-surface">
-                Building digital<br />
-                products that<br />
-                create impact
+                Full-stack engineer<br />
+                &amp; team leader<br />
+                <span className="text-on-surface/40">building at scale</span>
               </h1>
 
               <p className="text-base font-body font-light leading-[1.8] text-on-surface/70 max-w-xl">
-                {personalInfo.objective.split('.').slice(0, 2).join('.') + '.'}
+                With 5+ years of experience designing scalable applications and leading teams across Japan, Korea, and Southeast Asia. Specialized in full-stack development, cloud architecture, and cross-functional team management.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-6 pt-4">
@@ -44,32 +44,78 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="md:col-span-5 hidden md:block">
-              {/* Placeholder for feature visual */}
-              <div className="aspect-square bg-surface-clo" />
+            <div className="md:col-span-5 hidden md:flex flex-col gap-8">
+              {/* Key stats */}
+              <div className="space-y-6 border-l border-on-surface/20 pl-8">
+                <div>
+                  <span className="text-3xl font-display font-bold text-on-surface">5+</span>
+                  <p className="text-xs font-display tracking-[0.06em] uppercase text-on-surface/40 mt-2">Years Experience</p>
+                </div>
+                <div>
+                  <span className="text-3xl font-display font-bold text-on-surface">80+</span>
+                  <p className="text-xs font-display tracking-[0.06em] uppercase text-on-surface/40 mt-2">Team Members Led</p>
+                </div>
+                <div>
+                  <span className="text-3xl font-display font-bold text-on-surface">6+</span>
+                  <p className="text-xs font-display tracking-[0.06em] uppercase text-on-surface/40 mt-2">Projects Delivered</p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
       </main>
 
-      {/* ── CTA Section ── */}
-      <section className="bg-surface-clo py-26 px-6 md:px-8">
+      {/* ── Featured Work Preview ── */}
+      <section className="bg-surface-clo py-26 px-6 md:px-8 border-b border-[rgba(207,196,197,0.15)]">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-12 gap-8 items-center">
-            <div className="md:col-span-5">
+          <div className="grid md:grid-cols-12 gap-16 mb-20">
+            <div className="md:col-span-3">
+              <span className="text-[0.75rem] font-display tracking-[0.1em] uppercase text-on-surface/40">Recent Work</span>
+            </div>
+            <div className="md:col-span-9">
+              <h2 className="text-[clamp(1.75rem,3vw,2.5rem)] font-display font-semibold tracking-[-0.025em] leading-[1.1] text-on-surface mb-6">
+                6+ products shipped. Leading teams. Scaling impact.
+              </h2>
+              <button
+                onClick={() => navigate('/about')}
+                className="text-xs font-display tracking-[0.06em] uppercase text-on-surface/50 hover:text-on-surface transition-colors duration-300 flex items-center gap-2"
+              >
+                View all projects
+                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="square" strokeLinejoin="square" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── CTA Section ── */}
+      <section className="bg-surface py-26 px-6 md:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-12 gap-16 items-center">
+            <div className="md:col-span-6">
               <h2 className="text-[clamp(1.75rem,3vw,2.5rem)] font-display font-semibold tracking-[-0.025em] leading-[1.1] text-on-surface">
-                Let's work <span className="text-on-surface/40">together</span>
+                Interested in working <span className="text-on-surface/40">together?</span>
               </h2>
               <p className="text-base font-body font-light leading-[1.8] text-on-surface/70 mt-6">
-                Interested in collaborating on something meaningful? I'd love to hear from you.
+                I'm always open to discussing new opportunities, whether for projects, consulting, or team collaboration.
               </p>
             </div>
-            <div className="md:col-span-6 md:col-start-7">
+            <div className="md:col-span-6 md:text-right flex flex-col sm:flex-row gap-4 md:gap-0 md:justify-end">
               <a
                 href="mailto:ttducmanh.1812@gmail.com"
                 className="inline-flex bg-cta-metallic text-on-primary font-display text-xs font-medium tracking-[0.06em] uppercase px-8 py-4 transition-opacity duration-[400ms] hover:opacity-90 active:opacity-95"
               >
-                Start a Conversation
+                Get in touch
+              </a>
+              <a
+                href="https://www.linkedin.com/in/dauhnamcud1812/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex text-xs font-display tracking-[0.06em] uppercase text-on-surface/50 hover:text-on-surface transition-colors duration-300 items-center gap-2 md:ml-6"
+              >
+                LinkedIn Profile
               </a>
             </div>
           </div>
