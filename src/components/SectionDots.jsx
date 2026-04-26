@@ -1,6 +1,4 @@
-// Sections 0,1,4,5 are dark (transparent bg); 2,3 are light
-const DARK_SECTIONS = new Set([0, 1, 4, 5])
-const SECTION_COUNT = 6
+const SECTION_COUNT = 5
 
 export default function SectionDots({ activeSection, snapContainerRef }) {
   const scrollTo = (idx) => {
@@ -10,22 +8,21 @@ export default function SectionDots({ activeSection, snapContainerRef }) {
     })
   }
 
-  const isDarkContext = DARK_SECTIONS.has(activeSection)
+  const isDark = activeSection === 0 || activeSection === 3 || activeSection === 4
 
   return (
-    <div className="fixed right-5 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col gap-2.5">
+    <div className="fixed right-5 top-1/2 -translate-y-1/2 z-40 hidden md:flex flex-col gap-3">
       {Array.from({ length: SECTION_COUNT }, (_, i) => (
         <button
           key={i}
           onClick={() => scrollTo(i)}
-          aria-label={`Section ${i + 1}`}
+          aria-label={`Go to section ${i + 1}`}
+          className="w-1.5 h-1.5 transition-all duration-300"
           style={{
-            width: i === activeSection ? '6px' : '4px',
-            height: i === activeSection ? '6px' : '4px',
-            transition: 'all 0.3s ease',
-            background: isDarkContext
-              ? i === activeSection ? 'rgba(255,255,255,0.8)' : 'rgba(255,255,255,0.2)'
-              : i === activeSection ? 'rgba(26,28,28,0.7)'   : 'rgba(26,28,28,0.18)',
+            background: isDark
+              ? i === activeSection ? 'rgba(255,255,255,0.85)' : 'rgba(255,255,255,0.2)'
+              : i === activeSection ? 'rgba(26,28,28,0.75)' : 'rgba(26,28,28,0.2)',
+            transform: i === activeSection ? 'scale(1.4)' : 'scale(1)',
           }}
         />
       ))}
