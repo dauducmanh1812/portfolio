@@ -128,8 +128,8 @@ export default function HomePage({ onSectionChange, snapContainerRef }) {
             </motion.h1>
 
             <motion.p variants={heroItem} className="text-sm font-body text-white/45 max-w-md mb-10 leading-relaxed">
-              5 years building at scale across Japan, Korea &amp; Southeast Asia.
-              Shipping products, growing teams, solving hard problems.
+              Passionate about clean code, good teamwork, and shipping things
+              that actually work — across Japan, Korea &amp; Southeast Asia.
             </motion.p>
 
             <motion.div variants={heroItem} className="flex flex-wrap items-center gap-5">
@@ -179,9 +179,9 @@ export default function HomePage({ onSectionChange, snapContainerRef }) {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-6">
             {[
-              { target: 5,  prefix: '',   suffix: '+', label: 'Years of Experience', delay: 0 },
-              { target: 80, prefix: '',   suffix: '+', label: 'Engineers Led',        delay: 0.15 },
-              { target: 30, prefix: '~$', suffix: 'M', label: 'Revenue Generated',    delay: 0.3 },
+              { target: 5,  prefix: '', suffix: '+', label: 'Years of Experience',  delay: 0 },
+              { target: 6,  prefix: '', suffix: '+', label: 'Products Shipped',      delay: 0.15 },
+              { target: 80, prefix: '', suffix: '+', label: 'Engineers Worked With', delay: 0.3 },
             ].map(({ target, prefix, suffix, label, delay }) => (
               <motion.div
                 key={label}
