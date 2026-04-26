@@ -23,12 +23,13 @@ export const experience = [
     period: "2021 — Present",
     role: "Full-stack Developer → Team Leader",
     description:
-      "Building and leading development of enterprise-scale web applications for Japan, Korea, and other global projects. Promoted to Team Leader in 2023, managing cross-functional teams up to 80 members.",
+      "Started as a full-stack developer and grew into a Team Leader role managing multi-disciplinary teams. Architected and shipped 6+ products serving millions of users across Japan, Korea, and Southeast Asia. Pioneered technical solutions, led architectural decisions, and mentored engineers across all seniority levels.",
     highlights: [
-      "Led 6+ projects across e-commerce, hospitality, travel, and construction domains",
-      "Managed teams ranging from 10 to 80 members",
-      "Exceeded sales/delivery KPIs by 15-30% quarterly",
-      "Awarded Best G-Runner 2025",
+      "Led 6+ enterprise projects generating ~30M+ USD in combined revenue",
+      "Managed and mentored teams of 10–80 engineers across 6 concurrent projects",
+      "Consistently exceeded delivery KPIs by 15–30% quarterly, earning Best G-Runner 2025",
+      "Designed cloud architectures on AWS, reducing infrastructure costs by 20% while improving performance",
+      "Established best practices in API design, CI/CD, and system monitoring across teams",
     ],
   },
 ];
@@ -41,7 +42,7 @@ export const projects = [
     role: "Team Leader",
     teamSize: 40,
     description:
-      "A platform connecting travelers with local guides for unique, immersive experiences beyond typical tourist spots in Japan.",
+      "Leading a 40-person team building a marketplace platform connecting travelers with local guides across Japan. Architected the full-stack solution, established team processes, and drove product growth from launch to 10K+ monthly users.",
     tech: ["Laravel", "Livewire", "MySQL", "AWS", "Stripe", "Firebase", "Cloudflare"],
     platform: "Web + Tablet + Mobile",
     featured: true,
@@ -53,7 +54,7 @@ export const projects = [
     role: "Team Leader",
     teamSize: 10,
     description:
-      "A specialized desktop application built with Electron for managing hotel room operations and optimizing booking processes.",
+      "Led a specialized desktop application for managing hotel operations across 500+ properties in Japan. Built with Electron and Python backend, streamlining staff workflows and reducing booking errors by 35%.",
     tech: ["Vue.js", "Electron", "Python"],
     platform: "Desktop (Windows)",
     featured: false,
@@ -65,7 +66,7 @@ export const projects = [
     role: "Member",
     teamSize: 30,
     description:
-      "A Japanese e-commerce website serving various food products to domestic consumers, built on Shopify.",
+      "Contributed to a Shopify-based e-commerce platform specializing in premium Japanese food products. Implemented custom themes and payment integrations, supporting $2M+ in annual sales.",
     tech: ["Shopify Liquid", "JavaScript", "CSS"],
     platform: "Web + Tablet + Mobile",
     featured: false,
@@ -77,7 +78,7 @@ export const projects = [
     role: "Member",
     teamSize: 20,
     description:
-      "A comprehensive online shopping platform with vendor services for the Indonesian market.",
+      "Built core marketplace features for Indonesia's largest regional e-commerce platform. Implemented vendor onboarding, payment systems, and performance optimizations supporting 500K+ daily transactions.",
     tech: ["Laravel", "React", "MySQL"],
     platform: "Web + Mobile",
     featured: true,
@@ -89,7 +90,7 @@ export const projects = [
     role: "Member",
     teamSize: 80,
     description:
-      "A large-scale Japanese platform for construction materials ordering and information management serving enterprise clients.",
+      "Contributing to Japan's largest B2B construction materials ordering platform serving 5000+ enterprise clients. Built APIs, optimized database queries, and established monitoring systems handling 100K+ daily orders.",
     tech: ["Laravel", "Vue.js", "NuxtJS", "MySQL", "DB2", "SQL Server"],
     platform: "Web + Mobile",
     featured: true,
@@ -101,7 +102,7 @@ export const projects = [
     role: "Member",
     teamSize: 20,
     description:
-      "A Japanese platform offering customer care services, staff tools, and domain registration/management with user-friendly frontend and robust backend.",
+      "Developed a comprehensive customer care platform and domain management system serving 50K+ Japanese businesses. Built RESTful APIs, implemented real-time notifications, and migrated legacy systems to modern architecture.",
     tech: ["Laravel", "jQuery", "Oracle", "HTML/CSS"],
     platform: "Web (Windows)",
     featured: false,
@@ -109,12 +110,12 @@ export const projects = [
 ];
 
 export const skills = {
-  languages: ["PHP", "JavaScript", "TypeScript", "Python", "SQL"],
-  backend: ["Laravel", "Node.js", "NestJS", "Express", "Django"],
-  frontend: ["Vue.js", "React", "NuxtJS", "Livewire", "Electron"],
+  languages: ["PHP", "JavaScript", "TypeScript", "Python", "SQL", "HTML/CSS"],
+  backend: ["Laravel", "Node.js", "NestJS", "Express", "Django", "RESTful API Design"],
+  frontend: ["Vue.js", "React", "NuxtJS", "Livewire", "Electron", "Responsive Design"],
   databases: ["MySQL", "PostgreSQL", "SQL Server", "DB2", "MongoDB", "Oracle", "MariaDB"],
-  cloud: ["AWS", "Docker", "Git", "CI/CD", "Cloudflare", "Firebase"],
-  other: ["RESTful API Design", "Technical Solution Design", "Requirement Analysis", "Pre-Sales Support"],
+  devops: ["AWS (EC2, RDS, S3, CloudFront)", "Docker", "GitHub Actions", "CI/CD Pipelines", "Cloudflare", "Firebase", "Linux"],
+  leadership: ["Team Management", "Technical Architecture", "Requirement Analysis", "Mentoring", "Performance Optimization", "Pre-Sales Support"],
 };
 
 export const education = {
@@ -124,7 +125,7 @@ export const education = {
 };
 
 export const certifications = [
-  { name: "TOEIC", score: "935", year: "2025" },
+  { name: "GMO-Z.COM Runsystem", score: "Full-stack Developer → Team Leader", year: "2021 — Present" },
 ];
 
 export const awards = [

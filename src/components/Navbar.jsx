@@ -3,26 +3,39 @@ import { Link, useLocation } from 'react-router-dom'
 
 const navLinks = [
   { path: '/', label: 'Home' },
-  { path: '/about', label: 'About' },
+  { path: '/cv', label: 'CV' },
 ]
 
-export default function Navbar() {
+export default function Navbar({ isDark = false }) {
   const location = useLocation()
   const [mobileOpen, setMobileOpen] = useState(false)
 
+  const navBg = isDark
+    ? 'bg-[rgba(0,0,0,0.35)] backdrop-blur-[32px]'
+    : 'bg-[rgba(249,249,249,0.72)] backdrop-blur-[32px]'
+  const borderColor = isDark
+    ? 'border-[rgba(255,255,255,0.08)]'
+    : 'border-[rgba(207,196,197,0.15)]'
+  const activeLinkClass = isDark ? 'text-white' : 'text-on-surface'
+  const inactiveLinkClass = isDark
+    ? 'text-white/50 hover:text-white'
+    : 'text-on-surface/50 hover:text-on-surface'
+  const hamburgerColor = isDark ? 'bg-white' : 'bg-on-surface'
+  const mobileMenuBg = isDark ? 'bg-[rgba(0,0,0,0.92)] backdrop-blur-[32px]' : 'bg-surface-clo'
+  const mobileLinkActive = isDark ? 'text-white' : 'text-on-surface'
+  const mobileLinkInactive = isDark ? 'text-white/50' : 'text-on-surface/50'
+
   return (
-    <nav className="fixed top-0 w-full z-50 bg-neutral-950/60 backdrop-blur-xl shadow-[0_20px_40px_rgba(149,170,255,0.05)]">
-      <div className="flex justify-between items-center px-6 md:px-8 py-5 max-w-7xl mx-auto w-full">
+    <nav className={`fixed top-0 w-full z-50 transition-colors duration-500 ${navBg}`}>
+      <div className={`flex justify-between items-center px-6 md:px-8 py-4 max-w-7xl mx-auto w-full border-b ${borderColor}`}>
         {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-10 font-[Manrope] tracking-[-0.03em] font-bold uppercase text-[0.85rem]">
+        <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <Link
               key={link.path}
               to={link.path}
-              className={`pb-1 transition-all duration-300 ${
-                location.pathname === link.path
-                  ? 'text-white border-b-2 border-white'
-                  : 'text-neutral-400 hover:text-white'
+              className={`text-xs font-display tracking-[0.06em] uppercase transition-colors duration-300 ${
+                location.pathname === link.path ? activeLinkClass : inactiveLinkClass
               }`}
             >
               {link.label}
@@ -36,22 +49,22 @@ export default function Navbar() {
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
         >
-          <span className={`block w-6 h-0.5 bg-white transition-all ${mobileOpen ? 'rotate-45 translate-y-2' : ''}`} />
-          <span className={`block w-6 h-0.5 bg-white transition-all ${mobileOpen ? 'opacity-0' : ''}`} />
-          <span className={`block w-6 h-0.5 bg-white transition-all ${mobileOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+          <span className={`block w-6 h-0.5 transition-all ${hamburgerColor} ${mobileOpen ? 'rotate-45 translate-y-2' : ''}`} />
+          <span className={`block w-6 h-0.5 transition-all ${hamburgerColor} ${mobileOpen ? 'opacity-0' : ''}`} />
+          <span className={`block w-6 h-0.5 transition-all ${hamburgerColor} ${mobileOpen ? '-rotate-45 -translate-y-2' : ''}`} />
         </button>
       </div>
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-neutral-950/95 backdrop-blur-xl px-6 pb-6 border-t border-white/5">
+        <div className={`md:hidden ${mobileMenuBg} px-6 pb-6`}>
           {navLinks.map((link) => (
             <Link
               key={link.path}
               to={link.path}
               onClick={() => setMobileOpen(false)}
-              className={`block py-3 font-[Manrope] font-bold uppercase tracking-wider text-sm ${
-                location.pathname === link.path ? 'text-white' : 'text-neutral-400'
+              className={`block py-3 text-xs font-display tracking-[0.06em] uppercase transition-colors duration-300 ${
+                location.pathname === link.path ? mobileLinkActive : mobileLinkInactive
               }`}
             >
               {link.label}
