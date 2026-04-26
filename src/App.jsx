@@ -1,19 +1,14 @@
-import { useState, useRef, useCallback, useEffect } from 'react'
+import { useState, useRef, useCallback } from 'react'
 import { Routes, Route, Navigate, useLocation } from 'react-router-dom'
-import { AnimatePresence } from 'framer-motion'
-import CinematicBackground from './components/CinematicBackground'
-import FloatingNav from './components/FloatingNav'
-import SectionDots from './components/SectionDots'
-import PageTransition from './components/PageTransition'
+import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import SectionDots from './components/SectionDots'
 import HomePage from './pages/HomePage'
 import AboutPage from './pages/AboutPage'
 import CVPage from './pages/CVPage'
 import ProjectsPage from './pages/ProjectsPage'
-import NotFoundPage from './pages/NotFoundPage'
 
-// Dark sections on homepage (transparent, animated bg shows): 0,1,4,5
-const HOME_DARK_SECTIONS = new Set([0, 1, 4, 5])
+const DARK_SECTIONS = new Set([0, 3, 4])
 
 export default function App() {
   const location = useLocation()
@@ -22,40 +17,16 @@ export default function App() {
   const [activeSection, setActiveSection] = useState(0)
   const snapContainerRef = useRef(null)
 
-  // Ref to the contact-scroll function registered by HomePage
-  const contactScrollRef = useRef(null)
-
   const handleSectionChange = useCallback((idx) => {
     setActiveSection(idx)
   }, [])
 
-  const handleContactRequest = useCallback((fn) => {
-    contactScrollRef.current = fn
-  }, [])
-
-  const handleContactClick = useCallback(() => {
-    if (isHome && contactScrollRef.current) {
-      contactScrollRef.current()
-    } else {
-      // On non-home pages, mailto
-      window.location.href = 'mailto:ttducmanh.1812@gmail.com'
-    }
-  }, [isHome])
-
-  // On non-home pages, reset section to 0 so when returning home it starts fresh
-  useEffect(() => {
-    if (!isHome) setActiveSection(0)
-  }, [isHome])
+  const isDark = isHome ? DARK_SECTIONS.has(activeSection) : false
 
   return (
     <>
-      {/* ── Fixed cinematic background — always behind everything ── */}
-      <CinematicBackground fixed />
+      <Navbar isDark={isDark} />
 
-      {/* ── Floating nav ── */}
-      <FloatingNav onContactClick={handleContactClick} />
-
-      {/* ── Section dots (homepage only, right edge) ── */}
       {isHome && (
         <SectionDots
           activeSection={activeSection}
@@ -63,51 +34,22 @@ export default function App() {
         />
       )}
 
-      {/* ── Page routes with transition ── */}
-      <AnimatePresence mode="wait">
-        <Routes location={location} key={location.pathname}>
-          <Route
-            path="/"
-            element={
-              <PageTransition>
-                <HomePage
-                  onSectionChange={handleSectionChange}
-                  snapContainerRef={snapContainerRef}
-                  onContactRequest={handleContactRequest}
-                />
-              </PageTransition>
-            }
-          />
-          <Route
-            path="/cv"
-            element={
-              <PageTransition>
-                <CVPage />
-              </PageTransition>
-            }
-          />
-          <Route path="/about" element={<Navigate to="/cv" replace />} />
-          <Route
-            path="/projects"
-            element={
-              <PageTransition>
-                <ProjectsPage />
-              </PageTransition>
-            }
-          />
-          <Route
-            path="*"
-            element={
-              <PageTransition>
-                <NotFoundPage />
-              </PageTransition>
-            }
-          />
-        </Routes>
-      </AnimatePresence>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <HomePage
+              onSectionChange={handleSectionChange}
+              snapContainerRef={snapContainerRef}
+            />
+          }
+        />
+        <Route path="/cv" element={<CVPage />} />
+        <Route path="/about" element={<Navigate to="/cv" replace />} />
+        <Route path="/projects" element={<ProjectsPage />} />
+      </Routes>
 
-      {/* ── Footer on non-home pages ── */}
-      {!isHome && location.pathname !== '*' && <Footer />}
+      {!isHome && <Footer />}
     </>
   )
 }
