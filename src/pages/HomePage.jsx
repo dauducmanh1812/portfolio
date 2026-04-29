@@ -196,9 +196,7 @@ export default function HomePage({ onSectionChange, snapContainerRef }) {
               {personalInfo.title} · {personalInfo.subtitle}
             </p>
             <p className="text-sm font-body text-on-surface/60 leading-[1.85] max-w-sm">
-              Passionate about building things properly — from the database to the UI.
-              Five years in, and I still get excited every time something ships and
-              makes a real difference.
+              I don't love your code — just like how I love my wife.
             </p>
           </motion.div>
         </div>
