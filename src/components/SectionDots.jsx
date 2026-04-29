@@ -1,4 +1,4 @@
-const SECTION_COUNT = 5
+const SECTION_COUNT = 6
 
 export default function SectionDots({ activeSection, snapContainerRef }) {
   const scrollTo = (idx) => {
@@ -8,7 +8,7 @@ export default function SectionDots({ activeSection, snapContainerRef }) {
     })
   }
 
-  const isDark = activeSection === 0 || activeSection === 3 || activeSection === 4
+  const isDark = activeSection === 0 || activeSection === 4 || activeSection === 5
 
   return (
     <div className="fixed right-5 top-1/2 -translate-y-1/2 z-40 hidden md:flex flex-col gap-3">
