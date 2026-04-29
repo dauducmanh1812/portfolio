@@ -8,7 +8,7 @@ import AboutPage from './pages/AboutPage'
 import CVPage from './pages/CVPage'
 import ProjectsPage from './pages/ProjectsPage'
 
-const DARK_SECTIONS = new Set([0, 3, 4])
+const DARK_SECTIONS = new Set([0, 4, 5])
 
 export default function App() {
   const location = useLocation()

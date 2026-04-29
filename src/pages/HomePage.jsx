@@ -74,7 +74,7 @@ export default function HomePage({ onSectionChange, snapContainerRef }) {
     const el = snapRef.current
     if (!el) return
     const idx = Math.round(el.scrollTop / window.innerHeight)
-    const clamped = Math.max(0, Math.min(4, idx))
+    const clamped = Math.max(0, Math.min(5, idx))
     setActiveSection((prev) => {
       if (prev !== clamped) {
         onSectionChange?.(clamped)
@@ -134,7 +134,7 @@ export default function HomePage({ onSectionChange, snapContainerRef }) {
 
             <motion.div variants={heroItem} className="flex flex-wrap items-center gap-5">
               <button
-                onClick={() => snapRef.current?.scrollTo({ top: window.innerHeight * 2, behavior: 'smooth' })}
+                onClick={() => snapRef.current?.scrollTo({ top: window.innerHeight * 3, behavior: 'smooth' })}
                 className="cta-metallic text-white px-8 py-3.5 text-xs font-display tracking-[0.08em] uppercase transition-opacity hover:opacity-90 active:opacity-95"
               >
                 See My Work
@@ -165,13 +165,53 @@ export default function HomePage({ onSectionChange, snapContainerRef }) {
         </motion.div>
       </section>
 
-      {/* ══════════════ SECTION 2 — NUMBERS ═══════════════════ */}
+      {/* ══════════════ SECTION 2 — PROFILE PHOTO ════════════ */}
+      <section className="h-[100dvh] snap-start bg-surface flex flex-col md:grid md:grid-cols-2 overflow-hidden">
+
+        {/* Photo */}
+        <motion.div
+          className="flex-none h-[55dvh] md:h-auto relative overflow-hidden"
+          variants={fadeUpSection(0)}
+          initial="hidden"
+          animate={sa(1)}
+        >
+          <img
+            src={personalInfo.photo}
+            alt={personalInfo.name}
+            className="w-full h-full object-cover object-top"
+          />
+          <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-r from-transparent to-surface hidden md:block" />
+        </motion.div>
+
+        {/* Info */}
+        <div className="flex-1 flex flex-col justify-center px-8 md:px-12 lg:px-16">
+          <motion.div variants={fadeUpSection(0.1)} initial="hidden" animate={sa(1)}>
+            <p className="text-[0.65rem] font-display tracking-[0.2em] uppercase text-on-surface/30 mb-4">
+              About
+            </p>
+            <h2 className="text-[clamp(1.8rem,4vw,3rem)] font-display font-bold uppercase text-on-surface leading-[0.95] tracking-tight mb-3">
+              {personalInfo.name}
+            </h2>
+            <p className="text-[0.7rem] font-display tracking-[0.05em] uppercase text-on-surface/45 mb-6">
+              {personalInfo.title} · {personalInfo.subtitle}
+            </p>
+            <p className="text-sm font-body text-on-surface/60 leading-[1.85] max-w-sm">
+              Passionate about building things properly — from the database to the UI.
+              Five years in, and I still get excited every time something ships and
+              makes a real difference.
+            </p>
+          </motion.div>
+        </div>
+
+      </section>
+
+      {/* ══════════════ SECTION 3 — NUMBERS ═══════════════════ */}
       <section className="h-[100dvh] snap-start bg-surface flex items-center">
         <div className="w-full px-6 md:px-16 max-w-7xl mx-auto">
           <motion.p
             variants={fadeUpSection(0)}
             initial="hidden"
-            animate={sa(1)}
+            animate={sa(2)}
             className="text-[0.65rem] font-display tracking-[0.2em] uppercase text-on-surface/30 mb-16"
           >
             In numbers
@@ -187,11 +227,11 @@ export default function HomePage({ onSectionChange, snapContainerRef }) {
                 key={label}
                 variants={fadeUpSection(delay)}
                 initial="hidden"
-                animate={sa(1)}
+                animate={sa(2)}
                 className="border-t border-[rgba(207,196,197,0.3)] pt-6"
               >
                 <div className="text-[clamp(3.5rem,8vw,6rem)] font-display font-bold text-on-surface leading-none tracking-tight mb-3">
-                  <Counter target={target} prefix={prefix} suffix={suffix} isActive={activeSection === 1} />
+                  <Counter target={target} prefix={prefix} suffix={suffix} isActive={activeSection === 2} />
                 </div>
                 <p className="text-xs font-body text-on-surface/45 tracking-wide uppercase">{label}</p>
               </motion.div>
@@ -201,7 +241,7 @@ export default function HomePage({ onSectionChange, snapContainerRef }) {
           <motion.p
             variants={fadeUpSection(0.5)}
             initial="hidden"
-            animate={sa(1)}
+            animate={sa(2)}
             className="mt-16 text-sm font-body text-on-surface/35 max-w-lg leading-relaxed italic"
           >
             "The best code is invisible — it simply solves the problem. The best leaders amplify everyone around them."
@@ -214,7 +254,7 @@ export default function HomePage({ onSectionChange, snapContainerRef }) {
         <div className="w-full px-6 md:px-16 max-w-7xl mx-auto">
           <div className="grid md:grid-cols-[220px_1fr] gap-10 md:gap-20 items-start">
 
-            <motion.div variants={fadeUpSection(0)} initial="hidden" animate={sa(2)}>
+            <motion.div variants={fadeUpSection(0)} initial="hidden" animate={sa(3)}>
               <p className="text-[0.65rem] font-display tracking-[0.2em] uppercase text-on-surface/30 mb-4">
                 Selected Work
               </p>
@@ -229,7 +269,7 @@ export default function HomePage({ onSectionChange, snapContainerRef }) {
               </Link>
             </motion.div>
 
-            <motion.div variants={staggerList} initial="hidden" animate={sa(2)} className="space-y-0">
+            <motion.div variants={staggerList} initial="hidden" animate={sa(3)} className="space-y-0">
               {featuredProjects.map((p, i) => (
                 <motion.div
                   key={p.id}
@@ -276,7 +316,7 @@ export default function HomePage({ onSectionChange, snapContainerRef }) {
           <motion.p
             variants={fadeUpSection(0)}
             initial="hidden"
-            animate={sa(3)}
+            animate={sa(4)}
             className="text-[0.65rem] font-display tracking-[0.2em] uppercase text-white/20 mb-12"
           >
             Expertise
@@ -285,7 +325,7 @@ export default function HomePage({ onSectionChange, snapContainerRef }) {
           <motion.div
             variants={tileVariants}
             initial="hidden"
-            animate={sa(3)}
+            animate={sa(4)}
             className="grid grid-cols-2 md:grid-cols-3 gap-px bg-white/[0.05]"
           >
             {skillMeta.map(({ key, label, icon }) => (
@@ -311,7 +351,7 @@ export default function HomePage({ onSectionChange, snapContainerRef }) {
         <CinematicBackground />
 
         <div className="relative z-10 w-full px-6 md:px-16 max-w-7xl mx-auto">
-          <motion.div variants={fadeUpSection(0)} initial="hidden" animate={sa(4)}>
+          <motion.div variants={fadeUpSection(0)} initial="hidden" animate={sa(5)}>
             <p className="text-[0.65rem] font-display tracking-[0.2em] uppercase text-white/30 mb-8">
               Let's Connect
             </p>
