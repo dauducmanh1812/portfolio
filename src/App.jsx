@@ -1,5 +1,6 @@
 import { useState, useRef, useCallback } from 'react'
 import { Routes, Route, Navigate, useLocation } from 'react-router-dom'
+import { Analytics } from '@vercel/analytics/react'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import SectionDots from './components/SectionDots'
@@ -50,6 +51,7 @@ export default function App() {
       </Routes>
 
       {!isHome && <Footer />}
+      <Analytics />
     </>
   )
 }
